@@ -3,7 +3,10 @@
 
 
 *{
-    font-family: 微軟正黑體;
+    font-family: "微軟正黑體", Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .white{
@@ -190,49 +193,12 @@ body{
     width: 80%;
 }
 
-/* 手機 */
-@media (max-width: 480px) {
-    .jumbotron {
-        padding: 1rem 1rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
-    }
-    nav{display: none;}
-    main{width: 100%;}
-    aside{width: none;}
-}
-
-/* 平板 */
-@media (min-width: 481px) and (max-width: 768px) {
-    .jumbotron {
-        padding: 2rem 2rem;
-    }
-
-    footer {
-        font-size: 1rem;
-    }
-    nav{display: none;}
-    main{width: 75%;}
-    aside{width: 25%;}
-}
-
-/* 桌面 */
-@media (min-width: 769px) {
-    .jumbotron {
-        padding: 4rem 4rem;
-    }
-
-    footer {
-        font-size: 1.2rem;
-    }
-    nav{display: block;}
-    main{width: 75%;}
-    aside{width: 25;}
-}
 
 .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     border-radius: 50px;
     margin: 3rem;
     padding: 1vw 4vw;
@@ -245,6 +211,13 @@ body{
 }
 .navbar {
     padding: 1rem 1rem;
+    
+}
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    font-size: larger;
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -340,13 +313,6 @@ body{
     background-repeat: no-repeat;
     background: radial-gradient(circle at 25% 25%, #badb25, transparent 70%),
                 radial-gradient(circle at 75% 75%, #9370db, transparent 70%);
-}
-
-.page2{
-    background-image: url(../images/order_bg.jpg);
-    background-position: bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .o_img{
@@ -635,5 +601,51 @@ box{
 .content-wrapper p {
     font-size: 2em; 
 }
+@media (max-width: 1200px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .navbar-brand-logo {
+        margin-bottom: 1rem;
+    }
+}
 
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .navbar-nav {
+        flex-direction: column;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+    }
+    .carousel-caption h2 {
+        font-size: 5vw;
+    }
+    .carousel-caption h4 {
+        line-height: 2rem;
+    }
+}
 
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+    }
+    .carousel-caption h2 {
+        font-size: 6vw;
+    }
+    .carousel-caption h4 {
+        line-height: 1.5rem;
+    }
+}
